@@ -65,6 +65,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func ActionSheet(_ sender: Any) {
+        let alert = UIAlertController(title: "Title", message: "your message", preferredStyle: .actionSheet)
+        
+        // Dismiss Action
+        let dismiss = UIAlertAction(title: "Dismiss", style: .cancel){
+            action in
+            self.labelResult.text = "Basic alert dismiss"}
+        
+        alert.addAction(dismiss) // Dismiss action inserted to alert
+        
+        // Ok Action
+        let ok = UIAlertAction(title: "Okey", style: .default){
+            action in
+            self.labelResult.text = "Action sheet ok"}
+        
+        alert.addAction(ok) // Ok Action inserted to alert
+        
+        self.present(alert,animated: true)
     }
 }
 
